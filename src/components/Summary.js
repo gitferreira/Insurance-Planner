@@ -16,6 +16,9 @@ margin-top: 1rem;
 const Summary = ({data}) => {
 
     const {brand, year, plan} = data
+    if(brand === "" || year === "" || plan === ""){
+        return null;
+    }else{ 
     return (
         
         <SummaryContainer> 
@@ -27,6 +30,7 @@ const Summary = ({data}) => {
         </ul>
         </SummaryContainer>
       );
+    }
       
 }
  

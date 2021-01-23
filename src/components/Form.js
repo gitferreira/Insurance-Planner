@@ -52,7 +52,7 @@ margin-bottom: 1rem;
 `
 
 
-const Form = ({setSummary}) => {
+const Form = ({setSummary, setLoading}) => {
 
     const [data, setData] = useState({
         brand: "",
@@ -100,14 +100,20 @@ const Form = ({setSummary}) => {
 
     //Plan Price Increase
     const result = parseFloat((base * planPrice(plan)).toFixed(2))
-    console.log(result)
+    setLoading(true)
 
+    setTimeout(()=> {
+      setLoading(false)
     //Save it in props
     setSummary({
       calculation: result,
       data
     })
+    }, 2000)
     }
+  
+
+
 
    
   
